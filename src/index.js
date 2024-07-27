@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import './index.css';
 
 function App() {
   return (
-    <div>
+    <div className='container'>
       <Header />
       <Menu />
       <Footer />
@@ -13,22 +14,26 @@ function App() {
 
 const Header = () => {
   return (
-    <h1>Fast Pizza Co.</h1>
+    <header className='header'>
+      <h1>Fast Pizza Co.</h1>
+    </header>
   );
 }
 
 const Menu = () => {
   return (
-    <div>
+    <main className='menu'>
       <h2>Our Menu</h2>
       <Pizza />
-    </div>
+    </main>
   );
 }
 
 const Footer = () => {
   return (
-    <footer>All rights reserved &copy; {new Date().getFullYear()}</footer>
+    <footer className='footer'>
+      All rights reserved &copy; {new Date().getFullYear()}
+    </footer>
   );
 }
 
@@ -36,7 +41,7 @@ function Pizza() {
   return (
     <div>
       <img src='pizzas/prosciutto.jpg' alt='Pizza Prosciutto' />
-      <h2>Pizza Prosciutto</h2>
+      <h3>Pizza Prosciutto</h3>
       <p>Tomato, mozarella, ham, aragula, and burrata cheese</p>
     </div>
   );
