@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 
-function App() {
+const App = () => {
   return (
     <div className='container'>
       <Header />
@@ -24,8 +24,35 @@ const Menu = () => {
   return (
     <main className='menu'>
       <h2>Our Menu</h2>
-      <Pizza />
+
+      <Pizza
+        name='Focaccia'
+        ingredients='Bread with italian olive oil and rosemary'
+        photoName='pizzas/focaccia.jpg'
+        price={6}
+      />
+
+      <Pizza
+        name='Pizza Margherita'
+        ingredients='Tomato and mozarella'
+        photoName='pizzas/margherita.jpg'
+        price={10}
+      />
     </main>
+  );
+}
+
+const Pizza = (props) => {
+  console.log(props);
+  return (
+    <div className='pizza'>
+      <img src={props.photoName} alt={props.name} />
+      <div>
+        <h3>{props.name}</h3>
+        <p>{props.ingredients}</p>
+        <span>{props.price}</span>
+      </div>
+    </div>
   );
 }
 
@@ -34,16 +61,6 @@ const Footer = () => {
     <footer className='footer'>
       All rights reserved &copy; {new Date().getFullYear()}
     </footer>
-  );
-}
-
-function Pizza() {
-  return (
-    <div>
-      <img src='pizzas/prosciutto.jpg' alt='Pizza Prosciutto' />
-      <h3>Pizza Prosciutto</h3>
-      <p>Tomato, mozarella, ham, aragula, and burrata cheese</p>
-    </div>
   );
 }
 
